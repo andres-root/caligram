@@ -1,3 +1,15 @@
+# Project Files
+.db/
+.env
+.env.old
+.env.bk
+.env.backup
+.env.local
+.env.develop
+.env.staging
+.env.prod
+.env.staging
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
