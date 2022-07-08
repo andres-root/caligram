@@ -22,6 +22,10 @@ RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-r
     python3-dev \
     libpq-dev \
     postgresql-client \
+    gdal-bin libgdal-dev \
+    python3-gdal \
+    binutils \
+    libproj-dev \
     && rm -rf /var/lib/apt/lists/*
 
 
