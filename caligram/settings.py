@@ -49,6 +49,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
+    # Django REST Framework
+    'rest_framework',
+    # Project Apps
+    'authentication.apps.AuthenticationConfig',
+    'connection.apps.ConnectionConfig',
+    'post.apps.PostConfig',
 ]
 
 MIDDLEWARE = [
@@ -137,3 +143,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Project Configurations
+AUTH_USER_MODEL = 'authentication.User'
