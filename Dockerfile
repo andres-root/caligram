@@ -37,6 +37,7 @@ RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-r
 
 # Install the project requirements.
 COPY requirements.txt /app/
+RUN pip install --upgrade pip
 RUN pip install -r /app/requirements.txt
 
 # Runtime command that executes when "docker run" is called, it does the
