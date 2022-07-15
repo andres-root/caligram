@@ -51,6 +51,9 @@ INSTALLED_APPS = [
     'django.contrib.gis',
     # Django REST Framework
     'rest_framework',
+    'rest_framework.authtoken',
+    # Django OAUTH toolkit
+    'oauth2_provider',
     # Project Apps
     'authentication.apps.AuthenticationConfig',
     'connection.apps.ConnectionConfig',
@@ -146,3 +149,23 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Project Configurations
 AUTH_USER_MODEL = 'authentication.User'
+
+# Django Rest Framework
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        # 'rest_framework.authentication.BasicAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication',
+        # 'rest_framework.authentication.TokenAuthentication',
+        'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
+
+# Django OAUTH Toolkit
+LOGIN_URL = '/admin/login/'
+OAUTH2_PROVIDER = {
+    # this is the list of available scopes
+    'SCOPES': {'read': 'Read scope', 'write': 'Write scope', 'groups': 'Access to your groups'}
+}
